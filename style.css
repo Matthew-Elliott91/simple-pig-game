@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+/* General Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +23,7 @@ body {
   justify-content: center;
 }
 
-/* LAYOUT */
+/* Main Game Layout */
 main {
   position: relative;
   width: 100rem;
@@ -36,6 +37,7 @@ main {
   display: flex;
 }
 
+/* Players Section */
 .player {
   flex: 50%;
   padding: 9rem;
@@ -45,7 +47,7 @@ main {
   transition: all 0.75s;
 }
 
-/* ELEMENTS */
+/* Element Styles */
 .name {
   position: relative;
   font-size: 4rem;
@@ -72,7 +74,6 @@ main {
 .player--active .score {
   font-weight: 400;
 }
-
 .player--active .current {
   opacity: 1;
 }
@@ -99,7 +100,7 @@ main {
   font-size: 3.5rem;
 }
 
-/* ABSOLUTE POSITIONED ELEMENTS */
+/* Buttons */
 .btn {
   position: absolute;
   left: 50%;
@@ -113,11 +114,9 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-
   background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
@@ -168,4 +167,69 @@ main {
 
 .hidden {
   display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  main {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    padding-bottom: 6rem;
+    align-items: center;
+  }
+
+  .player {
+    flex: none;
+    padding: 5rem 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .score {
+    font-size: 6rem;
+  }
+
+  .current {
+    width: 80%;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    position: static;
+    display: block;
+    margin: 1rem auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50rem;
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* Dice Styling */
+  .dice {
+    height: 8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
 }
