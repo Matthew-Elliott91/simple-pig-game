@@ -55,7 +55,7 @@ const doRoll = function () {
   diceEl.src = `dice-${dice}.png`;
   return dice;
 };
-
+// Ai gameplay
 const aiGameplayLoop = async function () {
   while (amountOfRolls > 0) {
     const dice = doRoll();
