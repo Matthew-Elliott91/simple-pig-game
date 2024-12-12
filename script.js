@@ -11,6 +11,8 @@ const currentScore1El = document.getElementById('current--1');
 const diceEl = document.querySelector('.dice');
 const player0Section = document.querySelector('.player--0');
 const player1Section = document.querySelector('.player--1');
+const diceSound = new Audio('dice-sound.mp3');
+const pigOink = new Audio('pig-oink.mp3');
 
 const scores = [0, 0];
 let currentScore = 0;
@@ -55,10 +57,13 @@ const doRoll = function () {
   diceEl.src = `dice-${dice}.png`;
   return dice;
 };
-// Ai gameplay
+
 const aiGameplayLoop = async function () {
+  let rolledOne = false; // Track if AI rolls a 1
+
   while (amountOfRolls > 0) {
     const dice = doRoll();
+    diceSound.play();
 
     // Display the dice
     diceEl.classList.remove('hidden');
@@ -73,29 +78,33 @@ const aiGameplayLoop = async function () {
         currentScore;
       amountOfRolls--;
     } else {
+      pigOink.play();
       console.log('AI rolled a 1');
-      amountOfRolls = 0;
+      rolledOne = true; // Mark that AI rolled a 1
       break;
     }
   }
 
-  // Finalize the turn
-  scores[activePlayer] += currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
+  if (!rolledOne) {
+    // Finalize the turn only if AI didn't roll a 1
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
 
-  if (scores[activePlayer] >= 100) {
-    playing = false;
-    diceEl.classList.add('hidden');
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.add('player--winner');
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove('player--active');
-  } else {
-    switchPlayer();
+    if (scores[activePlayer] >= 100) {
+      playing = false;
+      diceEl.classList.add('hidden');
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add('player--winner');
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove('player--active');
+    }
   }
+
+  // End AI's turn by switching players
+  switchPlayer();
 };
 
 const aiPlay = async function () {
@@ -119,6 +128,7 @@ const switchPlayer = function () {
 // Rolling the Dice
 btnRoll.addEventListener('click', function () {
   if (playing) {
+    diceSound.play();
     // 1. Generate random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
 
@@ -132,6 +142,7 @@ btnRoll.addEventListener('click', function () {
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
     } else {
+      pigOink.play();
       switchPlayer();
     }
   }
