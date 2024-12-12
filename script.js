@@ -69,18 +69,17 @@ const aiGameplayLoop = async function () {
     diceEl.classList.remove('hidden');
     console.log(`AI rolled: ${dice}`);
 
-    // Delay for 1 second
-    await delay(2000);
-
     if (dice !== 1) {
       currentScore += dice;
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
       amountOfRolls--;
+      await delay(2000);
     } else {
       pigOink.play();
       console.log('AI rolled a 1');
       rolledOne = true; // Mark that AI rolled a 1
+      await delay(2000);
       break;
     }
   }
@@ -121,7 +120,13 @@ const switchPlayer = function () {
   player1Section.classList.toggle('player--active');
 
   if (activePlayer === 1) {
+    btnRoll.classList.add('hidden');
+    btnHold.classList.add('hidden');
+
     aiPlay();
+  } else {
+    btnRoll.classList.remove('hidden');
+    btnHold.classList.remove('hidden');
   }
 };
 
