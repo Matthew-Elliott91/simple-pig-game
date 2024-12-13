@@ -23,6 +23,45 @@ body {
   justify-content: center;
 }
 
+/* Modal layout */
+h1 {
+  font-size: 5rem; /* Larger text for desktop */
+  color: #fff; /* White text */
+  margin-bottom: 20px;
+}
+
+/* Heading 2 styling */
+h2 {
+  font-size: 3.5rem; /* Even larger text for desktop */
+  color: #fff; /* White text */
+  margin-bottom: 20px;
+}
+
+/* List styling */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+ul li {
+  font-size: 2rem; /* Larger text for list items */
+  margin: 10px 0;
+  color: #fff; /* White text */
+  line-height: 1.6;
+}
+
+game-instructions {
+  position: fixed;
+  top: 50%; /* Moves the div vertically to the center */
+  left: 50%; /* Moves the div horizontally to the center */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Offsets the div by 50% of its own width and height to truly center it */
+  display: block; /* Ensures it is visible (remove 'hidden' class in HTML to show it) */
+  z-index: 1000; /* Ensures it appears above other content */
+}
 /* Main Game Layout */
 main {
   position: relative;
@@ -136,6 +175,10 @@ main {
 }
 .btn--hold {
   top: 46.1rem;
+}
+
+.btn--modal {
+  top: 10rem;
 }
 
 .btn:active {

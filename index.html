@@ -8,7 +8,35 @@
     <title>Pig Game</title>
   </head>
   <body>
-    <main>
+    <div class="game-instructions hidden">
+      <h1>How to Play Pig (Player vs. Computer)</h1>
+      <h2>
+        The game of Pig is a simple dice game played between you and the
+        computer. Here's how it works:
+      </h2>
+      <ul>
+        <li>
+          Players take turns rolling a dice as many times as they wish, adding
+          the dice's value to their score for the turn.
+        </li>
+        <li>
+          If you roll a 1, your turn ends, and you lose all the points you
+          accumulated in that turn.
+        </li>
+        <li>
+          You can choose to "Hold" to add the points from your turn to your
+          total score and pass the dice to the computer.
+        </li>
+        <li>The first player to reach 100 points wins the game.</li>
+        <li>
+          The computer plays automatically, making its decisions based on a
+          simple strategy.
+        </li>
+      </ul>
+
+      <button class="btn btn--close">❌Close modal</button>
+    </div>
+    <main class="main">
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
@@ -30,6 +58,7 @@
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--modal">ℹ️ How to play</button>
     </main>
     <script src="script.js"></script>
   </body>

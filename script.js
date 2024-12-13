@@ -1,6 +1,8 @@
 'use strict';
 
 // Selecting the elements
+const btnModal = document.querySelector('.btn--modal');
+const btnClose = document.querySelector('.btn--close');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
@@ -52,6 +54,16 @@ const startingConditions = function () {
 
 startingConditions();
 
+//Modal buttons
+btnModal.addEventListener('click', function () {
+  document.querySelector('.main').classList.add('hidden');
+  document.querySelector('.game-instructions').classList.remove('hidden');
+});
+
+btnClose.addEventListener('click', function () {
+  document.querySelector('.main').classList.remove('hidden');
+  document.querySelector('.game-instructions').classList.add('hidden');
+});
 const doRoll = function () {
   const dice = Math.trunc(Math.random() * 6) + 1;
   diceEl.src = `dice-${dice}.png`;
