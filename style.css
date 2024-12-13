@@ -25,15 +25,15 @@ body {
 
 /* Modal layout */
 h1 {
-  font-size: 5rem; /* Larger text for desktop */
-  color: #fff; /* White text */
+  font-size: 5rem;
+  color: #fff;
   margin-bottom: 20px;
 }
 
 /* Heading 2 styling */
 h2 {
-  font-size: 3.5rem; /* Even larger text for desktop */
-  color: #fff; /* White text */
+  font-size: 3.5rem;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -45,22 +45,19 @@ ul {
 }
 
 ul li {
-  font-size: 2rem; /* Larger text for list items */
+  font-size: 2rem;
   margin: 10px 0;
-  color: #fff; /* White text */
+  color: #fff;
   line-height: 1.6;
 }
 
 game-instructions {
   position: fixed;
-  top: 50%; /* Moves the div vertically to the center */
-  left: 50%; /* Moves the div horizontally to the center */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Offsets the div by 50% of its own width and height to truly center it */
-  display: block; /* Ensures it is visible (remove 'hidden' class in HTML to show it) */
-  z-index: 1000; /* Ensures it appears above other content */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 1000;
 }
 /* Main Game Layout */
 main {
@@ -209,7 +206,7 @@ main {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Mobile Styles */
