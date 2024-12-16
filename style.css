@@ -273,3 +273,82 @@ main {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
 }
+
+/* Mobile Styles for Landscape Orientation */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  html {
+    font-size: 45%;
+  }
+
+  main {
+    width: 85%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem;
+  }
+
+  .player {
+    flex: 1;
+    padding: 1.5rem;
+    width: 42%;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .score {
+    font-size: 4.5rem;
+  }
+
+  .current {
+    width: 85%;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    padding: 0.4rem 1.8rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50rem;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+
+  .btn--new {
+    position: static;
+    margin-bottom: 1.8rem;
+  }
+
+  .btn--roll,
+  .btn--hold {
+    position: static;
+  }
+
+  .dice {
+    height: 6.5rem;
+    margin: 0.8rem 0;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn:active {
+    transform: translateY(1.5px);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  }
+}
