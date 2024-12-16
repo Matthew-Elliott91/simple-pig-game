@@ -278,59 +278,59 @@ main {
 
 @media (max-width: 768px) and (orientation: landscape) {
   html {
-    font-size: 45%;
+    font-size: 40%;
   }
 
   main {
-    width: 85%;
+    width: 80%;
     height: auto;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 2.5rem;
+    padding: 2rem;
   }
 
   .player {
     flex: 1;
-    padding: 1.5rem;
-    width: 42%;
+    padding: 1rem;
+    width: 40%;
     text-align: center;
   }
 
   .name {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .score {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   .current {
-    width: 85%;
-    padding: 1.2rem;
-    font-size: 1.4rem;
+    width: 80%;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
 
   .btn-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 0.8rem;
-    margin-top: 1.5rem;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
 
   .btn {
-    font-size: 1.3rem;
-    padding: 0.4rem 1.8rem;
+    font-size: 1.2rem;
+    padding: 0.3rem 1.5rem;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50rem;
-    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     margin: 0;
   }
 
   .btn--new {
     position: static;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.5rem;
   }
 
   .btn--roll,
@@ -339,8 +339,8 @@ main {
   }
 
   .dice {
-    height: 6.5rem;
-    margin: 0.8rem 0;
+    height: 5.5rem;
+    margin: 0.5rem 0;
     position: relative;
     display: block;
     margin-left: auto;
@@ -348,7 +348,7 @@ main {
   }
 
   .btn:active {
-    transform: translateY(1.5px);
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
   }
 }
